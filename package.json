@@ -1,7 +1,7 @@
 {
   "name": "@eversoft/react-table",
   "version": "1.0.0",
-  "description": "",
+  "description": "React based table component build with Bootstrap and react-table",
   "main": "lib/index.js",
   "directories": {
     "lib": "lib"
@@ -11,7 +11,7 @@
     "copy-files": "copyfiles -u 1 src/**/*.css lib/",
     "build": "npm run clean && tsc -p . && npm run copy-files"
   },
-  "author": "",
+  "author": "pradip",
   "license": "ISC",
   "peerDependencies": {
     "react": ">=16.0.0",
@@ -26,5 +26,19 @@
     "react-table": "^7.7.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.3.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eversoft-Group/react-table.git"
+  },
+  "keywords": [
+    "eversoft",
+    "eversoft-group",
+    "react",
+    "react-table"
+  ],
+  "bugs": {
+    "url": "https://github.com/Eversoft-Group/react-table/issues"
+  },
+  "homepage": "https://github.com/Eversoft-Group/react-table#readme"
 }
