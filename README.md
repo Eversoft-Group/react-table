@@ -73,4 +73,8 @@ import { ESTable } from "@eversoft/react-table"
   className=""
 />
 ...
-``
+```
+
+# Screenshots
+
+![Screenshot](https://user-images.githubusercontent.com/22606403/123514132-0a94a000-d6b1-11eb-8a3e-b09037aa70ea.JPG)

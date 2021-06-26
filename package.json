@@ -1,6 +1,6 @@
 {
   "name": "@eversoft/react-table",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React based table component build with Bootstrap and react-table",
   "main": "lib/index.js",
   "directories": {
@@ -11,7 +11,7 @@
     "copy-files": "copyfiles -u 1 src/**/*.css lib/",
     "build": "npm run clean && tsc -p . && npm run copy-files"
   },
-  "author": "pradip",
+  "author": "eversoft",
   "license": "ISC",
   "peerDependencies": {
     "react": ">=16.0.0",
