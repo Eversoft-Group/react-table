@@ -24,7 +24,15 @@ export const NoDataTable = ({ getTableProps, headerGroups }: any) => {
           </tr>
         ))}
       </thead>
-      <div style={{ padding: '50px' }}>No Data found</div>
+      <tbody>
+        <tr style={{ padding: '50px', display: "flex", justifyContent: "center" }}>
+          <td colSpan={1} style={{
+            border: "none",
+          }}>
+            <h6>No Data found</h6>
+          </td>
+        </tr>
+      </tbody>
     </table>
   )
 }

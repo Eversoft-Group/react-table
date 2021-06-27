@@ -1,30 +1,19 @@
 import React from 'react'
 
-export const Loading = ({ getTableProps, headerGroups }: any) => {
+export const Loading = () => {
   return (
-    <table className='table table-bordered' {...getTableProps()}>
-      <thead>
-        {headerGroups.map((headerGroup: any, index: number) => (
-          <tr {...headerGroup.getHeaderGroupProps()} key={index}>
-            {headerGroup.headers.map((column: any, index: number) => (
-              <th
-                {...column.getHeaderProps(column.getSortByToggleProps())}
-                key={index}
-              >
-                {column.render('Header')}
-                {column.isSorted ? (
-                  column.isSortedDesc ? (
-                    <i className='fa fa-fw fa-arrow-up' />
-                  ) : (
-                    <i className='fa fa-fw fa-arrow-down' />
-                  )
-                ) : null}
-              </th>
-            ))}
-          </tr>
-        ))}
-      </thead>
-      <div style={{ padding: '100px' }}>Loading..........</div>
+    <table className='table table-bordered'>
+      <tbody>
+        <tr style={{ padding: '100px', display: "flex", justifyContent: "center" }}>
+            <td
+              className='fa fa-spinner fa-pulse'
+              style={{
+                fontSize: "40px",
+                border: "none"
+              }}
+            />
+        </tr>
+      </tbody>
     </table>
   )
 }

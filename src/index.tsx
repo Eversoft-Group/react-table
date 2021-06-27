@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
+import React, {useEffect, useState } from 'react'
 import { DataTable } from './component/table'
-import "./style.css"
 
-interface fields {
+export interface ESFields {
   name: string,
   key: string,
   isSortable?: boolean
@@ -18,9 +17,9 @@ interface addButton {
   onClick?: (e: any) => void
 }
 
-interface ESTableProps {
+export interface ESTableProps {
   data: any[],
-  fields: fields[],
+  fields: ESFields[],
   pageSize?: pageSize,
   onDeleteAction?: (e: any) => void,
   onEditAction?: (e: any) => void,
@@ -28,72 +27,60 @@ interface ESTableProps {
   showPagination?: boolean,
   showSearch?: boolean,
   addButton?: addButton,
-  loadingDuration?: number,
   className?: string,
+  loading?: number
 }
 
-interface ESTableState {
-  loadingTime: number
-}
+const ESTable = (props: ESTableProps) => {
+  const [loadingTime, setLoadingTime] = useState(props?.loading || 10000)
 
-export class ESTable extends Component<ESTableProps, ESTableState> {
-  constructor(props: any) {
-    super(props)
-    this.state = {
-      loadingTime: this.props.loadingDuration || 20000
-    }
-  }
-
-  componentWillMount() {
-    if (this.props.data) {
-      if (this.props.data.length > 0) {
-        this.setState({
-          loadingTime: 0
-        })
-      }
-    }
+  useEffect(() => {
     const interval = setInterval(() => {
-      this.setState({
-        loadingTime: this.state.loadingTime - 1000
-      })
-      if (this.state.loadingTime <= 0) {
-        this.setState({
-          loadingTime: 0
-        })
+      setLoadingTime(loadingTime - 1000)
+      if(loadingTime <= 0){
+        setLoadingTime(0)
         clearInterval(interval)
       }
-    }, 1000)
-  }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [loadingTime])
 
-  render() {
-    return (
-      <div className={`es-table ${this.props.className ? this.props.className : ''}`}>
-        <DataTable
-          showPagination={this.props.showPagination}
-          title={this.props.title}
-          pageSize={this.props.pageSize}
-          addButton={this.props.addButton}
-          showSearch={this.props.showSearch}
-          onDeleteAction={this.props.onDeleteAction}
-          onEditAction={this.props.onEditAction}
-          data={this.props.data}
-          fields={this.props.fields}
-          loading={this.state.loadingTime}
-        />
-      </div>
-    )
-  }
+  useEffect(() => {
+    if (props?.data?.length > 0) {
+      setLoadingTime(0)
+    }
+  }, [props?.data?.length, setLoadingTime])
 
-  static defaultProps = {
-    showPagination: true,
-    title: "",
-    pageSize: {
-      allPageSize: [5, 10, 20, 50],
-      defaultPageSize: 5,
-    },
-    showSearch: true,
-    data: [],
-    fields: [],
-    loading: 5000
-  };
+  return (
+    <div className={`es-table ${props.className ? props.className : ''}`}>
+      <DataTable
+        showPagination={props.showPagination}
+        title={props.title}
+        pageSize={props.pageSize}
+        addButton={props.addButton}
+        showSearch={props.showSearch}
+        onDeleteAction={props.onDeleteAction}
+        onEditAction={props.onEditAction}
+        data={props.data}
+        fields={props.fields}
+        loading={loadingTime}
+      />
+    </div>
+  )
+}
+
+ESTable.defaultProps = {
+  showPagination: true,
+  title: "",
+  pageSize: {
+    allPageSize: [5, 10, 20, 50],
+    defaultPageSize: 5,
+  },
+  showSearch: false,
+  data: [],
+  fields: []
+};
+
+export {
+  ESTable
 }

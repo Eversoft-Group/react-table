@@ -42,7 +42,7 @@ export const Pagination = ({
 }: any) => {
   return (
     <ul className='pagination'>
-      <li className={`page-item ${!canPreviousPage ? 'disabled' : ''}`}>
+      <li style={{cursor: "default"}} className={`page-item ${!canPreviousPage ? 'disabled' : ''}`}>
         <a
           className={`page-link ${!canPreviousPage ? 'disabled-link' : ''}`}
           onClick={() => previousPage()}
@@ -68,7 +68,7 @@ export const Pagination = ({
           </li>
         )
       })}
-      <li className={`page-item ${!canNextPage ? 'disabled' : ''}`}>
+      <li style={{ cursor: "default" }} className={`page-item ${!canNextPage ? 'disabled' : ''}`}>
         <a
           className={`page-link ${!canNextPage ? 'disabled-link' : ''}`}
           onClick={() => nextPage()}
