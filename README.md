@@ -4,16 +4,18 @@ React table component build with Bootstrap and react-table
 
 # Install
 
-> `npm i @eversoft/react-table@latest`
+> `npm i @eversoft/react-table`
+
+<br />
 
 # Guideline
+
+## For React
 
 1. Add this code in your `public/index.html` file.
 
 ```html
 ...
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -42,7 +44,39 @@ React table component build with Bootstrap and react-table
 ...
 ```
 
-2. Use `ESTable`
+2. Import css in `index.js`
+
+```javascript
+// index.js
+import "@eversoft/react-table/lib/style.css"
+```
+
+
+## For next.js
+
+1. Add this code in your `pages/_document.js` file.
+
+```html
+...
+<Head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</Head>
+...
+```
+
+2. Install boostrap and import in `_app.js`
+  
+```bash
+npm i bootstrap
+```
+
+```javascript
+// _app.js
+import 'bootstrap/dist/css/bootstrap.css'
+import "@eversoft/react-table/lib/style.css"
+```
+
+## Use `ESTable`
 
 ```javascript
 import { ESTable } from "@eversoft/react-table"
@@ -74,6 +108,8 @@ import { ESTable } from "@eversoft/react-table"
 />
 ...
 ```
+
+> Note: Search Animation Doesn't work in next.js 
 
 # Screenshots
 
