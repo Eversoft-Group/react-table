@@ -70,7 +70,9 @@ export function DataTable(props: any) {
       title={props.title || ''}
       showPagination={props.showPagination || false}
       showSearch={props.showSearch || false}
+      loadingTime={props.loadingTime}
       loading={props.loading}
+      errorMessage={props.errorMessage}
     />
   )
 }

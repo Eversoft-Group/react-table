@@ -11,6 +11,12 @@ import React, { useMemo } from 'react'
 import { TableComponent } from './table-component'
 import { TableTop } from './table-top'
 import { TableFooter } from './table-footer'
+import { ESTableCoreProps } from '../..'
+
+interface TableProps extends ESTableCoreProps {
+  columns: any,
+  pageSizes: any
+}
 
 export const Table = ({
   columns,
@@ -20,8 +26,10 @@ export const Table = ({
   addButton,
   showPagination,
   showSearch,
-  loading
-}: any) => {
+  loading,
+  loadingTime,
+  errorMessage
+}: TableProps) => {
   const finalData = useMemo(() => data, [data])
   const finalColumns = useMemo(() => columns, [columns])
   const {
@@ -72,12 +80,13 @@ export const Table = ({
               setGlobalFilter={setGlobalFilter}
               state={state}
               addButton={addButton} />
-            {loading > 0 ? (
+            {((loadingTime && loadingTime > 0) || loading) ? (
               <Loading />
-            ) : data.length <= 0 && loading === 0 ? (
+            ) : data.length <= 0 && loadingTime === 0 ? (
               <NoDataTable
                 getTableProps={getTableProps}
                 headerGroups={headerGroups}
+                errorMessage={errorMessage}
               />
             ) : (
               <TableComponent

@@ -103,7 +103,9 @@ import { ESTable } from "@eversoft/react-table"
     title: "Add Button",
     onClick: () => {},
   }}
-  loadingDuration={5000}
+  loadingTime={5000}
+  loading={true/false}
+  errorMessage={"<b>Error</b>"}
   className=""
 />
 ...

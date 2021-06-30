@@ -17,9 +17,8 @@ interface addButton {
   onClick?: (e: any) => void
 }
 
-export interface ESTableProps {
+export interface ESTableCoreProps {
   data: any[],
-  fields: ESFields[],
   pageSize?: pageSize,
   onDeleteAction?: (e: any) => void,
   onEditAction?: (e: any) => void,
@@ -28,11 +27,17 @@ export interface ESTableProps {
   showSearch?: boolean,
   addButton?: addButton,
   className?: string,
-  loading?: number
+  loading?: boolean,
+  loadingTime?: number,
+  errorMessage?: string
+}
+
+export interface ESTableProps extends ESTableCoreProps {
+  fields: ESFields[],
 }
 
 const ESTable = (props: ESTableProps) => {
-  const [loadingTime, setLoadingTime] = useState(props?.loading || 10000)
+  const [loadingTime, setLoadingTime] = useState(props?.loadingTime || 10000)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -63,7 +68,9 @@ const ESTable = (props: ESTableProps) => {
         onEditAction={props.onEditAction}
         data={props.data}
         fields={props.fields}
-        loading={loadingTime}
+        loadingTime={loadingTime}
+        loading={props.loading}
+        errorMessage={props.errorMessage}
       />
     </div>
   )
@@ -78,7 +85,8 @@ ESTable.defaultProps = {
   },
   showSearch: false,
   data: [],
-  fields: []
+  fields: [],
+  loading: false
 };
 
 export {

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const NoDataTable = ({ getTableProps, headerGroups }: any) => {
+export const NoDataTable = ({ getTableProps, headerGroups, errorMessage }: any) => {
   return (
     <table className='table table-bordered' {...getTableProps()}>
       <thead>
@@ -29,7 +29,10 @@ export const NoDataTable = ({ getTableProps, headerGroups }: any) => {
           <td colSpan={1} style={{
             border: "none",
           }}>
-            <h6>No Data found</h6>
+            {errorMessage
+              ? <span dangerouslySetInnerHTML={{ __html: errorMessage }} />
+              : <h6>No Data found</h6>
+            }
           </td>
         </tr>
       </tbody>
