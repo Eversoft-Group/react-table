@@ -11,6 +11,8 @@ const TableTop = ({
     preGlobalFilteredRows,
     setGlobalFilter,
     state,
+    showPagination,
+    dataLength,
     addButton
 }: any) => {
     return (
@@ -32,6 +34,7 @@ const TableTop = ({
                                     </option>
                                 ))
                                 : null}
+                            {!showPagination && <option value={dataLength}>All</option>}
                         </select>
                         <span>entries</span>
                     </div>
