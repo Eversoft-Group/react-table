@@ -70,6 +70,7 @@ export const CompleteTable = () => {
             {
               name: "Likes",
               key: "likes",
+              isSortable: true
             },
             {
               name: "Status",
