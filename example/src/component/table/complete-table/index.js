@@ -27,6 +27,7 @@ export const CompleteTable = () => {
         {
             name: "Username",
             key: "user",
+            isSortable: true
         },
         {
             name: "Likes",
