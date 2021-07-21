@@ -1,4 +1,5 @@
 {
+  "homepage": "https://eversoft-group.github.io/react-table/",
   "name": "@eversoft/react-table",
   "version": "1.0.6",
   "description": "React based table component build with Bootstrap and react-table",
@@ -43,6 +44,5 @@
   ],
   "bugs": {
     "url": "https://github.com/Eversoft-Group/react-table/issues"
-  },
-  "homepage": "https://eversoft-group.github.io/react-table/"
+  }
 }
