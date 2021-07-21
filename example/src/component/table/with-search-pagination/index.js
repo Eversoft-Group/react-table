@@ -49,7 +49,7 @@ export const WithSearchAndPagination = () => {
               key: "likes",
             },
             {
-              name: "Active",
+              name: "Status",
               key: "active",
             },
           ]}

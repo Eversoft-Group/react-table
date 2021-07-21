@@ -52,7 +52,7 @@ export const WithAddButton = () => {
               key: "likes",
             },
             {
-              name: "Active",
+              name: "Status",
               key: "active",
             },
           ]}

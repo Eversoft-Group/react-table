@@ -72,7 +72,7 @@ export const CompleteTable = () => {
               key: "likes",
             },
             {
-              name: "Active",
+              name: "Status",
               key: "active",
             },
           ]}

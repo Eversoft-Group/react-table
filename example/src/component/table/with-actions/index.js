@@ -54,7 +54,7 @@ const onEdit = (row) => alert(Row is: \${JSON.stringify(row)});
               key: "likes",
             },
             {
-              name: "Active",
+              name: "Status",
               key: "active",
             },
           ]}
