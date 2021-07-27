@@ -28,6 +28,7 @@ function App() {
                   href="https://github.com/Eversoft-Group/react-table"
                   style={{ textDecoration: "none" }}
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <i
                     className="fa fa-github"
@@ -40,6 +41,7 @@ function App() {
                   href="https://www.npmjs.com/package/@eversoft/react-table"
                   style={{ textDecoration: "none", paddingLeft: "10px" }}
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <i
                     className="fa fa-archive"
