@@ -11,9 +11,7 @@
     "clean": "rimraf lib/",
     "copy-files": "copyfiles -u 1 src/**/*.css lib/",
     "build": "npm run clean && tsc -p . && npm run copy-files",
-    "publish": "npm run build && npm publish",
-    "predeploy": "cd example && npm run build",
-    "deploy": "cd example && gh-pages -d build"
+    "publish": "npm run build && npm publish"
   },
   "author": "eversoft",
   "license": "ISC",
