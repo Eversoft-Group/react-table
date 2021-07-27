@@ -13,6 +13,7 @@ export const ConnectSocial = () => {
           href="https://facebook.com/dhpradeep25"
           style={{ textDecoration: "none" }}
           target="_blank"
+          rel="noreferrer"
         >
           <i
             className="fa fa-facebook"
@@ -25,6 +26,7 @@ export const ConnectSocial = () => {
           href="https://github.com/dhpradeep"
           style={{ textDecoration: "none", paddingLeft: "10px" }}
           target="_blank"
+          rel="noreferrer"
         >
           <i
             className="fa fa-github"
@@ -37,6 +39,7 @@ export const ConnectSocial = () => {
           href="https://linkedin.com/in/dhpradeep25/"
           style={{ textDecoration: "none", paddingLeft: "10px" }}
           target="_blank"
+          rel="noreferrer"
         >
           <i
             className="fa fa-linkedin"
@@ -49,6 +52,7 @@ export const ConnectSocial = () => {
           href="https://stackoverflow.com/users/8653313/pradip-dhaka/"
           style={{ textDecoration: "none", paddingLeft: "10px" }}
           target="_blank"
+          rel="noreferrer"
         >
           <i
             className="fa fa-stack-overflow"
