@@ -37,7 +37,6 @@ export const WithAddButton = () => {
   }, []);
 
   return (
-    <div style={{ width: "80rem" }}>
       <Card title={<Title />} code={syntax}>
         <RefreshButton onClick={refreshClick} />
         <ESTable
@@ -69,6 +68,5 @@ export const WithAddButton = () => {
           }}
         />
       </Card>
-    </div>
   );
 };

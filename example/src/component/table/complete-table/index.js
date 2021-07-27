@@ -26,12 +26,12 @@ export const CompleteTable = () => {
     fields={[
         {
             name: "Username",
-            key: "user",
-            isSortable: true
+            key: "user"
         },
         {
             name: "Likes",
             key: "likes",
+            isSortable: true
         },
         {
             name: "Active",
@@ -58,7 +58,6 @@ export const CompleteTable = () => {
   }, []);
 
   return (
-    <div style={{ width: "80rem" }}>
       <Card title={<Title />} code={syntax}>
         <RefreshButton onClick={refreshClick} />
         <ESTable
@@ -91,6 +90,5 @@ export const CompleteTable = () => {
           }}
         />
       </Card>
-    </div>
   );
 };

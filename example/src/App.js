@@ -17,36 +17,59 @@ function App() {
     <div className="App">
       <div className="container">
         <div className="row">
-          <ConnectSocial />
-          <div style={{ width: "80rem" }}>
-            <Card title={<Title />} code={syntax}>
-              <a
-                href="https://github.com/Eversoft-Group/react-table"
-                style={{ textDecoration: "none", paddingLeft: "10px" }}
-              >
-                <i
-                  className="fa fa-github"
-                  style={{
-                    fontSize: "25px",
-                  }}
-                />
-              </a>
-            </Card>
+          <div className="col">
+            <ConnectSocial />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col" style={{paddingRight: "40px"}}>
+              <Card title={<Title />} code={syntax}>
+                <a
+                  href="https://github.com/Eversoft-Group/react-table"
+                  style={{ textDecoration: "none" }}
+                >
+                  <i
+                    className="fa fa-github"
+                    style={{
+                      fontSize: "25px",
+                    }}
+                  />
+                </a>
+              </Card>
           </div>
           <br />
           <br />
           <h4 style={{ marginTop: "25px" }}>#Examples</h4>
           <br />
-          <WithoutAction />
-
+          <div className="row">
+            <div className="col">
+              <WithoutAction />
+            </div>
+          </div>
           <br />
-          <WithSearchAndPagination />
+          <div className="row">
+            <div className="col">
+              <WithSearchAndPagination />
+            </div>
+          </div>
           <br />
-          <WithAction />
+          <div className="row">
+            <div className="col">
+              <WithAction />
+            </div>
+          </div>
           <br />
-          <WithAddButton />
+          <div className="row">
+            <div className="col">
+              <WithAddButton />
+            </div>
+          </div>
           <br />
-          <CompleteTable />
+          <div className="row">
+            <div className="col">
+              <CompleteTable />
+            </div>
+          </div>
           <br />
           <div>
             <h4 style={{ textAlign: "center", padding: "20px" }}>

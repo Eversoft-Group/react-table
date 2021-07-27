@@ -21,8 +21,7 @@ export const WithAction = () => {
   const onDelete = (row) => alert(`Row is: ${JSON.stringify(row)}`);
   const onEdit = (row) => alert(`Row is: ${JSON.stringify(row)}`);
 
-  const syntax = `
-const onDelete = (row) => alert(Row is: \${JSON.stringify(row)});
+  const syntax = `const onDelete = (row) => alert(Row is: \${JSON.stringify(row)});
 const onEdit = (row) => alert(Row is: \${JSON.stringify(row)});
 
 <ESTable
@@ -39,7 +38,6 @@ const onEdit = (row) => alert(Row is: \${JSON.stringify(row)});
   }, []);
 
   return (
-    <div style={{ width: "80rem" }}>
       <Card title={<Title />} code={syntax}>
         <RefreshButton onClick={refreshClick} />
         <ESTable
@@ -67,6 +65,5 @@ const onEdit = (row) => alert(Row is: \${JSON.stringify(row)});
           onEditAction={(e) => onEdit(e)}
         />
       </Card>
-    </div>
   );
 };

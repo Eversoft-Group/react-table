@@ -34,7 +34,6 @@ export const WithSearchAndPagination = () => {
   }, []);
 
   return (
-    <div style={{ width: "80rem" }}>
       <Card title={<Title />} code={syntax}>
         <RefreshButton onClick={refreshClick} />
         <ESTable
@@ -60,6 +59,5 @@ export const WithSearchAndPagination = () => {
           showSearch={true}
         />
       </Card>
-    </div>
   );
 };

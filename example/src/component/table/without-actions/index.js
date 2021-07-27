@@ -32,7 +32,6 @@ export const WithoutAction = () => {
   }, []);
 
   return (
-    <div style={{ width: "80rem" }}>
       <Card title={<Title />} code={syntax}>
         <RefreshButton onClick={refreshClick} />
         <ESTable
@@ -57,6 +56,5 @@ export const WithoutAction = () => {
           loading={loading}
         />
       </Card>
-    </div>
   );
 };
