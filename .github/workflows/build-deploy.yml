@@ -26,6 +26,9 @@ jobs:
     - name: Install NPM packages
       run: npm install
     
+    - name: Install NPM packages for examples
+      run: cd example && npm install
+    
     - name: Build project
       run: cd example && npm run build
 
