@@ -27,9 +27,22 @@ function App() {
                 <a
                   href="https://github.com/Eversoft-Group/react-table"
                   style={{ textDecoration: "none" }}
+                  target="_blank"
                 >
                   <i
                     className="fa fa-github"
+                    style={{
+                      fontSize: "25px",
+                    }}
+                  />
+                </a>
+                <a
+                  href="https://www.npmjs.com/package/@eversoft/react-table"
+                  style={{ textDecoration: "none", paddingLeft: "10px" }}
+                  target="_blank"
+                >
+                  <i
+                    className="fa fa-archive"
                     style={{
                       fontSize: "25px",
                     }}
